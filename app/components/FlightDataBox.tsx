@@ -9,6 +9,8 @@ import Speedo from '../../public/speed.svg'
 import Compass from '../../public/compass.svg'
 import Altitude from '../../public/altitude.svg'
 import Binoculars from '../../public/binoculars.svg'
+import Takeoff from '../../public/plane-takeoff.svg'
+import Landing from '../../public/plane-landing.svg'
 
 import { transform } from 'typescript';
 
@@ -21,8 +23,8 @@ const FlightDataBox = (/*data:FlightData*/) => {
 
                     {/* --- Top Left --- */}
                     <div className="col-span-2 bg-[#0895A1] p-4 rounded-tl-3xl">
-                        <div className="grid grid-cols-6 gap-2 items-center">
-                            <div>
+                        <div className="grid grid-cols-6 gap-2 items-left">
+                            <div className="col-span-1">
                                 <PlaneIcon style={{ opacity: '55%', transform: 'rotate(180deg)'}} />
                             </div>
                             <div className="col-span-3">
@@ -52,7 +54,7 @@ const FlightDataBox = (/*data:FlightData*/) => {
                     </div>
 
                     {/* --- Bottom Left --- */}
-                    <div className="col-span-2 bg-slate-100 rounded-bl-3xl" >
+                    <div className="bg-slate-100 col-span-2 rounded-bl-3xl" >
                         <div 
                             className="grid grid-cols-2 h-full p-5"  
                             style={{ 
@@ -62,7 +64,7 @@ const FlightDataBox = (/*data:FlightData*/) => {
                                     backgroundPosition: "center"
                                 }}
                         >
-                            {/* Left elemnts */}
+                            {/* Left elements */}
                             <div className="col-span-1">
                                 <div className='grid h-full'>
                                     <div className="inline-flex items-center mb-5">
@@ -71,11 +73,11 @@ const FlightDataBox = (/*data:FlightData*/) => {
                                     </div>
                                     <div className="inline-flex items-center mb-5">
                                         <Altitude style={{marginRight:"10px", height:"30px", width:"30px"}}/>
-                                            <p>2870 ft</p>                    
+                                        <p>2870 ft</p>                    
                                     </div>
                                     <div className="inline-flex items-center">
                                         <Compass style={{marginRight:"10px", height:"30px", width:"30px"}}/>
-                                            <p>130°</p>                                    
+                                        <p>130°</p>                                    
                                     </div>
                                 </div>
                             </div>
@@ -92,7 +94,7 @@ const FlightDataBox = (/*data:FlightData*/) => {
                                     </div>
                                     <div className="inline-flex items-center">
                                         <Binoculars style={{marginRight:"10px", height:"30px", width:"30px"}}/>
-                                        <p>North West</p>                                    
+                                        <p className="whitespace-nowrap">North West</p>                                    
                                     </div>
                                 </div>
                             </div>
@@ -100,8 +102,25 @@ const FlightDataBox = (/*data:FlightData*/) => {
                     </div>
 
                     {/* --- Bottom Right --- */}
-                    <div className="bg-slate-100 p-4 rounded-br-3xl border-l-2 border-dashed border-gray-600">
-                        Right Bottom
+                    <div className="bg-slate-100 rounded-br-3xl border-l-2 border-dashed border-gray-600">
+                        <div className="grid grid-cols-2 h-full p-5">
+                        <div className="col-span-1">
+                            <div className='grid h-full'>
+                                <div className="inline-flex items-center mb-5">
+                                    <p className="mr-[10px] text-[11px]">Flight</p>
+                                    <p className="text-lg">AC347</p>
+                                </div>
+                                <div className="inline-flex items-center mb-5">
+                                    <Takeoff style={{marginRight:"10px", height:"35px", width:"35px"}}/>
+                                    <p>YVR</p>                    
+                                </div>
+                                <div className="inline-flex items-center">
+                                    <Landing style={{marginRight:"10px", height:"35px", width:"35px"}}/>
+                                    <p>YCXR</p>                                    
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

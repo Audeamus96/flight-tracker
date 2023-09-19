@@ -19,8 +19,15 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-      <body className={`${roboto.className} bg-white text-slate-950 mx-auto p-4 container`}>{children}</body>
+    <html lang="en" style={{ 
+      height:"100%",
+      margin:"0",
+      // backgroundImage: `url('./sky.jpg')`,
+      // backgroundSize:"cover",
+      // backgroundRepeat: "no-repeat",
+      // backgroundPosition: "center"
+    }}>
+      <body className={`${roboto.className} text-slate-950 mx-auto p-4 container`}>{children}</body>
     </html>
   )
 }

@@ -28,16 +28,18 @@ export default async function Home() {
   // console.log(flights[0]);
   return (
     <>
-      <header className="flex- justify-between items-center mb-4">
-        <h1 className="text-2x1">Flights in your area</h1>
-      </header>
-      <ul>
-        { flights.map(flight => (
-            <li key={flight.id}>{flight.callsign}</li>
-          ))
-        }
-      </ul>
-      <FlightDataBox/>
+      <div>
+        <header className="flex- justify-between items-center mb-4">
+          <h1 className="text-2x1">Flights in your area</h1>
+        </header>
+        <ul>
+          { flights.map(flight => (
+              <li key={flight.id}>{flight.callsign}</li>
+            ))
+          }
+        </ul>
+        <FlightDataBox/>
+      </div>
     </>
   )
 }
