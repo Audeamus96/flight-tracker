@@ -23,10 +23,15 @@ const config: Config = {
       '2xl': '1536px',
       // => @media (min-width: 1536px) { ... }
     },
-
     fontSize: {
       'xs' : "10px"
-    }
+    },
+    extend: {
+      backgroundImage:
+         {
+           'tilt': '#000000'
+         }
+     },
   },
   plugins: [],
 }

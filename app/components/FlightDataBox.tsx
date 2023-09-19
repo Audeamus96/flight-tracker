@@ -3,6 +3,8 @@
 import Image from 'next/image'
 import { FlightData } from "flightradar24-client";
 import planeIcon from '../../public/plane.svg'
+import PlaneTiltIcon from '../../public/plane-tilt.svg'
+
 import { transform } from 'typescript';
 
 const FlightDataBox = (/*data:FlightData*/) => {
@@ -45,18 +47,39 @@ const FlightDataBox = (/*data:FlightData*/) => {
                 </div>
 
                 {/* Top Right */}
-                <div className="bg-[#0895A1] p-4 rounded-tr-3xl border-l-2 border-dashed border-gray-700">
-                    Right Top
+                <div className="col-span-1 bg-[#0895A1] p-4 rounded-tr-3xl border-l-2 border-dashed border-gray-600">
+                    <div className="flex items-center justify-center h-full">
+                        <p className="text-center text-gray-700 whitespace-nowrap">Flight Info</p>
+                    </div>
                 </div>
 
                 {/* Bottom Left*/}
-                <div className="col-span-2 bg-slate-100 p-4 rounded-bl-3xl">
-                   <p>Left Bottom</p>
-                   <p>Left Bottom</p>
+                <div className="col-span-2 bg-slate-100 rounded-bl-3xl" >
+                    <div className="grid grid-cols-2 h-full"  style={{ 
+                                                                        backgroundImage: `url('./plane-tilt.svg')`,
+                                                                        backgroundSize:"80px 80px",
+                                                                        backgroundRepeat: "no-repeat",
+                                                                        backgroundPosition: "center"
+                                                                        }}>
+                        <div className="col-span-1">
+                            Here
+                        </div>
+                        <div className="col-span-1">
+                            Here
+                        </div>
+                    </div>
+                    {/* <div className="grid grid-cols-2 h-full bg-[url('/public/tilt.svg')]">
+                        <div className="col-start-1 row-start-1 col-span-1">
+                            Here
+                        </div>
+                        <div className="col-span-1">
+                            Here
+                        </div>
+                    </div> */}
                 </div>
 
                 {/* Bottom Right */}
-                <div className="bg-slate-100 p-4 rounded-br-3xl border-l-2 border-dashed border-gray-700">
+                <div className="bg-slate-100 p-4 rounded-br-3xl border-l-2 border-dashed border-gray-600">
                     Right Bottom
                 </div>
             </div>
