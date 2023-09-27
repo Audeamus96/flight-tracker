@@ -31,21 +31,22 @@ export default function Home() {
   // const [userLocation, setUserLocation] = useState<GeolocationCoordinates | null>(null);
   const [flights, setFlights] = useState<FlightData[]>([]);
 
-  // useEffect(() => {
-  //   const northLat = 49.9;
-  //   const westLon = 122.9;
-  //   const southLat = 49.1;
-  //   const eastLon = 122.1;
+  useEffect(() => {
+    const northLat = 49.9;
+    const westLon = 122.9;
+    const southLat = 49.1;
+    const eastLon = 122.1;
 
-  //   fetch(`/api/getFlightData?northLat=${northLat}&westLon=${westLon}&southLat=${southLat}&eastLon=${eastLon}`)
-  //     .then((response) => response.json())
-  //     .then((data) => {
-  //       setFlights(data);
-  //     })
-  //     .catch((error) => {
-  //       console.error('Error fetch flight data:', error);
-  //     });
-  // }, []);
+    fetch(`/api/hello`)//?northLat=${northLat}&westLon=${westLon}&southLat=${southLat}&eastLon=${eastLon}`)
+      .then((response) => response.json())
+      .then((data) => {
+        console.log("Data" + data);
+        //setFlights(data);
+      })
+      .catch((error) => {
+        console.error('Error fetch flight data:', error);
+      });
+  }, []);
 
   // -------------------------------------------------------------------------------------
     // async function getAndLogFlight () {
